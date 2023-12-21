@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suffcient Grace</title>
+</head>
+<style>
+    :root{
+	--green: #27ae60;
+	--black: #192a56;
+	--light-color:#666;
+	--box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+*{
+	font-family: sans-serif;
+	margin: 0; padding: 0;
+	text-decoration: none;
+	outline: none;
+	box-sizing: border-box;
+	border: none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+span{
+	color: #27ae60;
+}
+.sub-heading{
+	text-align: center;
+	font-size: 2rem;
+	padding-top: 1rem;
+	color: var(--black);
+}
+.heading{
+	text-align: center;
+	font-size: 2.5rem;
+	padding-bottom: 1rem;
+	color: #27ae60;
+	text-transform: uppercase;
+}
+.btn{
+	margin-top: 1rem;
+	display: inline-block;
+	font-size: 1rem;
+	color: #000;
+	background: var(--black);
+	border-radius: .5rem;
+	cursor: pointer;
+	padding: .8rem 2rem;
+}
+
+.btn:hover{
+	background-color: #27ae60;
+	color: #fff;
+}
+.navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	padding: 20px 30px;
+	position: relative;
+}
+
+.logo{
+	font-size: 30px;
+	color: #192a56;
+	font-weight: bolder;
+}
+.logo img{
+	width: 60px;
+}
+
+.toggle-button{
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.toggle-button .bar{
+	width: 35px;
+	height: 4px;
+	background-color: #000;
+	border-radius: 5px;
+	margin: 3px 0px;
+}
+
+.nav-links{
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li{
+	margin-right: 25px;
+}
+
+.nav-links li a{
+	font-size: 17px;
+	color: var(--light-color);
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	transition: 0.4s ease;
+}
+.nav-links li .active,
+.nav-links li a:hover{
+	background-color: var(--green);
+	color: #fff;
+}
+.nav-links .signup{
+	font-size: 17px;
+	color: var(--light-color);
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	transition: 0.4s ease;
+	background-color: var(--green);
+	color: #fff;
+}
+
+.blogs{
+	padding-top: 3rem;
+}
+.blogs .box-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+	gap: 1.5rem;
+	background-image: url(background.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+	
+}
+
+.blogs .box-container .box{
+	overflow: hidden;
+	border-radius: .5rem;
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+}
+
+.blogs .box-container .box img{
+	height: 25rem;
+	width: 100%;
+	object-fit: cover;
+}
+
+.blogs .box-container .box .content{
+	padding: 2rem;
+	align-items: center;
+	text-align: center;
+}
+
+.blogs .box-container .box .content h3{
+	line-height: 1.8rem;
+	color: var(--black);
+	font-size: 1.4rem;
+	text-align: center;
+	padding: .5rem 0;
+}
+.blogs .box-container .box .content p{
+	line-height: 1.8;
+	color: var(--light-color);
+	font-size: 1.4rem;
+	text-align: center;
+	padding: .5rem 0;
+}
+.blogs .heading{
+	text-align: center;
+	font-size: 2.5rem;
+	padding-bottom: 1rem;
+	color: #192a56;
+	text-transform: none;
+}
+
+@media screen and (max-width:450px){
+	.navbar{
+		padding: 20px 25px;
+	}
+	.nav-links{
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		width: 100%;
+		background-color: #192a56;
+		padding: 25px;
+		top: 100%;
+		left: 0;
+	}
+	.nav-links li{
+		padding: 12px 0px;
+	}
+
+	.nav-links li a{
+		font-size: 17px;
+		color: #fff;
+		border-radius: .5rem;
+		padding: .3rem 1.3rem;
+		transition: 0.4s ease;
+	}
+	.toggle-button{
+		display: flex;
+	}
+	.nav-links.active{
+		display: block;
+	}
+	.products .box-container .box img{
+		height: auto;
+		width: 100%;
+	}
+	
+}
+</style>
+<body>
+    <!--header section starts-->
+  <header class="navbar">
+    <a href="#" class="logo"><img src="sg.png" alt="">Suffcient Grace</a>
+    <div class="toggle-button" id="toggleButton">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"  class="active">Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+  </header>
+  <!--header section ends-->
+
+  <!--blogs section starts-->
+  <section class="blogs" id="blogs">
+    <h1 class="heading">Our <span>Blogs</span></h1>
+    <div class="box-container">
+      <div class="box">
+        <img src="blog-frige.jpg" alt="">
+        <div class="content">
+          <h3>How To Prevent your fridge from damage</h3>
+          <p>Guides on How To Take Good Care of your refrigartor</p>
+          <a href="#" class="btn">Read Now!</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="blog-microwave.jpg" alt="">
+        <div class="content">
+          <h3>How to use microwave</h3>
+          <p>Guides on How To Use Microwave</p>
+          <a href="#" class="btn">Read Now!</a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="blog-blender.jpg" alt="">
+        <div class="content">
+          <h3>Hpw to prepare a healthy fruit juice with a blender</h3>
+          <p>Guides on how to use the blender for fruit juice </p>
+          <a href="#" class="btn">Read Now!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--blogs section ends-->
+
+  <script>
+    const toggleButton = document.getElementById('toggleButton');
+    const navLinks = document.getElementById('navLinks');
+    
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    </script>
+</body>
+</html>

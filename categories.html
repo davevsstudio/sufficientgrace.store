@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suffcient Grace</title>
+</head>
+<style>
+    :root{
+	--green: #27ae60;
+	--black: #192a56;
+	--light-color:#666;
+	--box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+*{
+	font-family: sans-serif;
+	margin: 0; padding: 0;
+	text-decoration: none;
+	outline: none;
+	box-sizing: border-box;
+	border: none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+span{
+	color: #27ae60;
+}
+    .btn{
+	margin-top: 1rem;
+	display: inline-block;
+	font-size: 1rem;
+	background-color: #27ae60;
+	color: #fff;
+	border-radius: .5rem;
+	cursor: pointer;
+	padding: .8rem 2rem;
+}
+
+.btn:hover{
+	background-color: #27ae60;
+	color: #fff;
+}
+.navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	padding: 20px 30px;
+	position: relative;
+}
+
+.logo{
+	font-size: 30px;
+	color: #192a56;
+	font-weight: bolder;
+}
+.logo img{
+	width: 30px;
+}
+
+.toggle-button{
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.toggle-button .bar{
+	width: 35px;
+	height: 4px;
+	background-color: #000;
+	border-radius: 5px;
+	margin: 3px 0px;
+}
+
+.nav-links{
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li{
+	margin-right: 25px;
+}
+
+.nav-links li a{
+	font-size: 17px;
+	color: var(--light-color);
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	transition: 0.4s ease;
+}
+.nav-links li .active,
+.nav-links li a:hover{
+	background-color: var(--green);
+	color: #fff;
+}
+.heading{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+.heading h1{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #27ae60;
+}
+.categories{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.categories-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+}
+.categories-container .box{
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 0.7rem;
+    padding-top: 120px;
+    
+}
+.categories-container .box img{
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    object-position: center;
+}
+.categories-container .box h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+@media screen and (max-width:450px){
+	.navbar{
+		padding: 20px 25px;
+	}
+	.nav-links{
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		width: 100%;
+		background-color: #192a56;
+		padding: 25px;
+		top: 100%;
+		left: 0;
+	}
+	.nav-links li{
+		padding: 12px 0px;
+	}
+
+	.nav-links li a{
+		font-size: 17px;
+		color: #fff;
+		border-radius: .5rem;
+		padding: .3rem 1.3rem;
+		transition: 0.4s ease;
+	}
+    .toggle-button{
+		display: flex;
+	}
+	.nav-links.active{
+		display: block;
+	}
+	.products .box-container .box img{
+		height: auto;
+		width: 100%;
+	}
+	section{
+		padding: 2rem 9%;
+	}
+}
+
+</style>
+<body>
+    <!--header section starts-->
+  <header class="navbar">
+    <a href="#" class="logo"><img src="washing-machine.png" alt="">Suffcient Grace</a>
+    <div class="toggle-button" id="toggleButton">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="categories.html" class="active">Categories</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+
+  </header>
+  <!--header section ends-->
+
+  <!--categories section starts-->
+  <section class="categories" id="categories">
+    <div class="heading">
+    <h1>Categories</h1>
+    <a href="products.html" class="btn">Shop All</a>
+    </div>
+    <div class="categories-container">
+        <div class="box">
+            <img src="usb-c-cable.png" alt="">
+            <h2>Electronics</h2>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        <div class="box">
+            <img src="playstation.png" alt="">
+            <h2>ps console</h2>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        <div class="box">
+            <img src="car.png" alt="">
+            <h2>Car</h2>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        <div class="box">
+            <img src="washing-machine.png" alt="">
+            <h2> machine</h2>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        <div class="box">
+            <img src="microwave.png" alt="">
+            <h2>Microwave</h2>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+    </div>
+  </section>
+  <!--categories section ends-->
+  <script>
+const toggleButton = document.getElementById('toggleButton');
+const navLinks = document.getElementById('navLinks');
+
+toggleButton.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+</script>
+</body>
+</html>

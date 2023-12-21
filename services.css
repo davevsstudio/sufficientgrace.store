@@ -1,0 +1,170 @@
+:root{
+	--green: #27ae60;
+	--black: #192a56;
+	--light-color:#666;
+	--box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+*{
+	font-family: sans-serif;
+	margin: 0; padding: 0;
+	text-decoration: none;
+	outline: none;
+	box-sizing: border-box;
+	border: none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+span{
+	color: #27ae60;
+}
+.btn{
+	margin-top: 1rem;
+	display: inline-block;
+	font-size: 1rem;
+	color: #000;
+	background: var(--black);
+	border-radius: .5rem;
+	cursor: pointer;
+	padding: .8rem 2rem;
+}
+
+.btn:hover{
+	background-color: #27ae60;
+	color: #fff;
+}
+.navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	padding: 20px 30px;
+	position: relative;
+}
+
+.logo{
+	font-size: 30px;
+	color: #192a56;
+	font-weight: bolder;
+}
+.logo img{
+	width: 60px;
+}
+
+.toggle-button{
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.toggle-button .bar{
+	width: 35px;
+	height: 4px;
+	background-color: #000;
+	border-radius: 5px;
+	margin: 3px 0px;
+}
+
+.nav-links{
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li{
+	margin-right: 25px;
+}
+
+.nav-links li a{
+	font-size: 17px;
+	color: var(--light-color);
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	transition: 0.4s ease;
+}
+.nav-links li .active,
+.nav-links li a:hover{
+	background-color: var(--green);
+	color: #fff;
+}
+
+.services .box-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+	gap: 1.5rem;
+}
+.services .box-container .box{
+	padding: 0.5rem 0.2rem;
+	background: #fff;
+	outline: var(--box-shadow);
+	outline-offset: -1rem;
+	text-align: center;
+	border-radius: 5rem;
+	box-shadow: var(--box-shadow);
+}
+.services .box-container .box:hover{
+	outline: #000;
+	outline-offset: 0rem;
+}
+.services .box-container .box img{
+	margin: 1rem 0;
+	height: 15rem;
+}
+.services  h1{
+	color: #000;
+	text-align: center;
+	font-size: 2rem;
+}
+.services .box-container .box h3{
+	color: #27ae60;
+	line-height: 1.8;
+	font-size: 1.8rem;
+}
+.services .box-container .box p{
+	color: #000;
+	font-size: 1.3rem;
+	padding: 1rem 0;
+}
+
+
+@media screen and (max-width:450px) {
+	.navbar{
+		padding: 20px 25px;
+	}
+	.nav-links{
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		width: 100%;
+		background-color: #192a56;
+		padding: 25px;
+		top: 100%;
+		left: 0;
+	}
+	.nav-links li{
+		padding: 12px 0px;
+	}
+
+	.nav-links li a{
+		font-size: 17px;
+		color: #fff;
+		border-radius: .5rem;
+		padding: .3rem 1.3rem;
+		transition: 0.4s ease;
+	}
+
+	.toggle-button{
+		display: flex;
+	}
+	.nav-links.active{
+		display: block;
+	}
+	.products .box-container .box img{
+		height: auto;
+		width: 100%;
+	}
+	section{
+		padding: 2rem 9%;
+	}
+}

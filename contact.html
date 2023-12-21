@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suffcient Grace</title>
+</head>
+<style>
+:root{
+    --background-color:#192a56;
+    --green:#27ae60;
+    --hover:#666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border: .1rem solid #aaa;
+    --light-bg:#f3efec;
+    --dark-bg:rgba(0,0,0.7);
+    --primary-color:#8a6d46;
+	--bg-black-100:rgba(31, 31, 31, 0.9);
+	--bg-white-100:#ddd;
+	--bg-white-25:#f5f5f5f5;
+	--bg-black-10:#fff;
+	--text-black-900:#000;
+	--text-black-700:rgb(37, 37, 37);
+	--text-black-600:rgb(172, 172, 172);
+	--text-black-400:rgb(221, 221, 221);
+	--text-black-700:rgb(37, 37, 37);
+	--text-black-300:#f5f5f5;
+}
+
+section{
+	padding:2rem 9%;
+}
+*{
+	font-family: sans-serif;
+	margin: 0; padding: 0;
+	text-decoration: none;
+	outline: none;
+	box-sizing: border-box;
+	border: none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+
+:before, :after{
+	box-sizing:border-box;
+}
+
+img{
+	width:100%;
+}
+
+.container{
+	max-width:1140px;
+	margin:auto;
+}
+
+.row{
+	display:flex;
+	flex-wrap:wrap;
+}
+
+.titleText, h2{
+	color:var(--text-black-700);
+	font-size:2rem;
+	font-weight:300;
+}
+
+span{
+	color: var(--primary-color);
+	font-weight: 700;
+	font-size: 1.5rem;
+}
+
+.sub-heading{
+	text-align: center;
+	color: var(--background-color);
+	padding-top: 1rem;
+	font-size: 2rem;
+}
+
+.heading{
+	text-align: center;
+	color: darkturquoise;
+	padding-bottom: 2rem;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+}
+
+.title{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+
+.btn{
+	margin-top: 1rem;
+	display: inline-block;
+	font-size: 1rem;
+	background-color: #27ae60;
+	color: #fff;
+	border-radius: .5rem;
+	cursor: pointer;
+	padding: .8rem 2rem;
+	
+}
+.btn:hover{
+	letter-spacing: .1rem;
+}
+
+
+.navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	padding: 20px 30px;
+	position: relative;
+}
+
+.logo{
+	font-size: 30px;
+	color: #192a56;
+	font-weight: bolder;
+}
+.logo img{
+	width: 60px;
+}
+
+.toggle-button{
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.toggle-button .bar{
+	width: 35px;
+	height: 4px;
+	background-color: #000;
+	border-radius: 5px;
+	margin: 3px 0px;
+}
+
+.nav-links{
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li{
+	margin-right: 25px;
+}
+
+.nav-links li a{
+	font-size: 17px;
+	color: var(--light-color);
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	transition: 0.4s ease;
+}
+.nav-links li .active,
+.nav-links li a:hover{
+	background-color: var(--green);
+	color: #fff;
+}
+
+.contact .icons-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	padding-bottom: 2rem;
+}
+
+
+.contact .icons-container .icons{
+	flex: 1 1 20rem;
+	background: #fff;
+	padding: 2rem;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: .5rem;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+	text-align: center;
+}
+
+.contact .icons-container .icons img{
+	height: 3rem;
+	width: 3rem;
+}
+
+.contact .icons-container .icons h3{
+	font-size: 1.5rem;
+	color: #333;
+	padding: 1rem 0;
+} 
+
+.contact .icons-container .icons p{
+	font-size: 1rem;
+	color: #666;
+	padding: 1rem 0;
+	padding: .2rem 0;
+} 
+
+
+.contact form{
+	 max-width: 60rem;
+	 margin: 1rem auto;
+	 text-align: center;
+}
+.contact .row{
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.2);
+	box-shadow: var(--box-shadow);
+	border-radius: .5rem;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	padding: 1rem;
+}
+
+.contact .row form{
+	flex: 1 1 30rem;
+	padding: .5rem 1rem;
+}
+
+.contact .row .map{
+	flex: 1 1 20rem;
+	width: 100%;
+	padding: 1rem;
+}
+
+.contact .row form .inputBox{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.contact .row form textarea,
+.contact .row form .inputBox input{
+	margin-top: 1rem;
+	padding: 1rem;
+	font-size: 1rem;
+	color: #333;
+	background-color: #f7f7f7;
+	border-radius: .5rem;
+	text-transform: none;
+	width: 49%;
+	text-transform: capitalize;
+}
+
+.contact .row form textarea{
+	width: 100%;
+	height: 17rem;
+	resize: none;
+}
+
+@media screen and (max-width:450px) {
+	.navbar{
+		padding: 30px 25px;
+	}
+	.nav-links{
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		width: 100%;
+		background-color: #192a56;
+		padding: 25px;
+		top: 100%;
+		left: 0;
+	}
+	.nav-links li{
+		padding: 7px 0px;
+	}
+
+	.nav-links li a{
+		font-size: 17px;
+		color: #fff;
+		border-radius: .5rem;
+		padding: .2rem 1.3rem;
+		transition: 0.4s ease;
+	}
+
+	.toggle-button{
+		display: flex;
+	}
+	.nav-links.active{
+		display: block;
+	}
+
+	.contact .icons-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	padding-bottom: 2rem;
+}
+
+.contact{
+	background-color: #fff;
+	margin-top: 300px;
+}
+.contact .icons-container .icons{
+	flex: 1 1 20rem;
+	background: #fff;
+	padding: 2rem;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: .5rem;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+	text-align: center;
+}
+
+.contact .icons-container .icons img{
+	height: 3rem;
+	width: 3rem;
+}
+
+.contact .icons-container .icons h3{
+	font-size: 1.5rem;
+	color: #333;
+	padding: 1rem 0;
+} 
+
+.contact .icons-container .icons p{
+	font-size: 1rem;
+	color: #666;
+	padding: 1rem 0;
+	padding: .2rem 0;
+} 
+
+
+.contact form{
+	 max-width: 60rem;
+	 margin: 1rem auto;
+	 text-align: center;
+}
+.contact .row{
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.2);
+	box-shadow: var(--box-shadow);
+	border-radius: .5rem;
+	display: flex;
+	flex-wrap: wrap-reverse;
+	padding: 1rem;
+}
+
+.contact .row form{
+	flex: 1 1 30rem;
+	padding: .5rem 1rem;
+}
+
+.contact .row .map{
+	flex: 1 1 20rem;
+	width: 100%;
+	padding: 1rem;
+}
+
+.contact .row form .inputBox{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.contact .row form textarea,
+.contact .row form .inputBox input{
+	margin-top: 1rem;
+	padding: 1rem;
+	font-size: 1rem;
+	color: #333;
+	background-color: #f7f7f7;
+	border-radius: .5rem;
+	text-transform: none;
+	width: 49%;
+	text-transform: capitalize;
+}
+
+.contact .row form textarea{
+	width: 100%;
+	height: 17rem;
+	resize: none;
+}
+}
+</style>
+<body>
+               <!--header section starts-->
+<header class="navbar">
+<a href="#" class="logo"><img src="sg.png" alt="">Suffcient Grace</a>
+<div class="toggle-button" id="toggleButton">
+<div class="bar"></div>
+<div class="bar"></div>
+<div class="bar"></div>
+</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html"  >Home</a></li>
+<li><a href="categories.html">Categories</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="products.html" >Products</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html"  class="active">Contact Us</a></li>
+</ul>
+            
+</header>
+  <!--header section ends-->
+
+  <section class="contact">
+    <h1 class="heading">Contact Us </h1>
+    <div class="icons-container">
+         <div class="icons">
+            <img src="phone-call.png" alt="">
+			<h3>Phone Number</h3>
+			<p>+234 7038402828</p>
+			<p>+234 8055610559</p>
+         </div>
+
+		 <div class="icons">
+            <img src="envelope.png" alt="">
+			<h3>Email Address</h3>
+			<p>Zatos0709@gmail.com</p>
+         </div> 
+
+		 <div class="icons">
+            <img src="location.png" alt="">
+			<h3>Office Address</h3>
+			<p>18, Adewale Adegun street, Karaole Estate, Ifako/ijaye, Lagos, Nigeria </p>
+         </div>
+    </div>
+
+	<div class="row">
+		<form action="">
+			<div class="inputBox">
+				<input type="text" placeholder="name">
+				<input type="number" placeholder="number">
+			</div>
+			<div class="inputBox">
+				<input type="email" placeholder="email" required>
+				<input type="text" placeholder="subject" required>
+			</div>
+			<textarea name="" placeholder="message" id="" cols="30" rows="10"></textarea>
+			<input type="submit" value="send message" placeholder="send" class="btn">
+		</form>
+	
+	</div>
+  </section>
+
+  <script>
+    const toggleButton = document.getElementById('toggleButton');
+    const navLinks = document.getElementById('navLinks');
+    
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    </script>
+</body>
+</html>

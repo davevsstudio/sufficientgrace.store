@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suffcient Grace</title>
+</head>
+<style>
+    :root{
+	--green: #27ae60;
+	--black: #192a56;
+	--light-color:#666;
+	--box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+
+*{
+	font-family: sans-serif;
+	margin: 0; padding: 0;
+	text-decoration: none;
+	outline: none;
+	box-sizing: border-box;
+	border: none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+span{
+	color: #27ae60;
+}
+.btn{
+	margin-top: 1rem;
+	display: inline-block;
+	font-size: 1rem;
+	background-color: #27ae60;
+	color: #fff;
+	border-radius: .5rem;
+	cursor: pointer;
+	padding: .8rem 2rem;
+	
+}
+.btn:hover{
+	letter-spacing: .1rem;
+}
+
+.navbar{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	padding: 20px 30px;
+	position: relative;
+}
+
+.logo{
+	font-size: 30px;
+	color: #192a56;
+	font-weight: bolder;
+}
+.logo img{
+	width: 60px;
+}
+
+.toggle-button{
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.toggle-button .bar{
+	width: 35px;
+	height: 4px;
+	background-color: #000;
+	border-radius: 5px;
+	margin: 3px 0px;
+}
+
+.nav-links{
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li{
+	margin-right: 25px;
+}
+
+.nav-links li a{
+	font-size: 17px;
+	color: var(--light-color);
+	border-radius: .5rem;
+	padding: .5rem 1.5rem;
+	transition: 0.4s ease;
+}
+.nav-links li .active,
+.nav-links li a:hover{
+	background-color: var(--green);
+	color: #fff;
+}
+
+.products{
+	padding-top: 2rem;
+}
+.products .box-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+	gap: 1.5rem;
+	
+}
+
+.products .box-container .box{
+	padding: .5rem ;
+	border-radius: .5rem;
+	border: .1rem solid rgba(0,0,0,.2);
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	box-shadow: var(--box-shadow);
+}
+
+.products .box-container .box img{
+	height: 17rem;
+	
+}
+.products .box-container .box h3{
+	font-size: 1.5rem;
+	color: var(--black);
+}
+
+.products .box-container .box span{
+	color: var(--green);
+	font-weight: bolder;
+	margin-right: 1rem;
+	font-size: 1.2rem;
+}
+.sub-heading{
+	text-align: center;
+	font-size: 2.3rem;
+	padding-top: 1rem;
+	color: var(--green);
+	padding-bottom: 20px;
+}
+
+
+@media screen and (max-width:450px) {
+	.navbar{
+		padding: 30px 25px;
+	}
+	.nav-links{
+		display: none;
+		flex-direction: column;
+		position: absolute;
+		width: 100%;
+		background-color: #192a56;
+		padding: 25px;
+		top: 100%;
+		left: 0;
+	}
+	.nav-links li{
+		padding: 7px 0px;
+	}
+
+	.nav-links li a{
+		font-size: 17px;
+		color: #fff;
+		border-radius: .5rem;
+		padding: .2rem 1.3rem;
+		transition: 0.4s ease;
+	}
+
+	.toggle-button{
+		display: flex;
+	}
+	.nav-links.active{
+		display: block;
+	}
+	.products{
+	padding-top: 10rem;
+}
+.products .box-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+	gap: 1.5rem;
+	
+}
+
+.products .box-container .box{
+	padding: .5rem ;
+	border-radius: .5rem;
+	border: .1rem solid rgba(0,0,0,.2);
+	background-color: #fff;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	box-shadow: var(--box-shadow);
+}
+
+.products .box-container .box img{
+	height: 17rem;
+	
+}
+.products .box-container .box h3{
+	font-size: 1.5rem;
+	color: var(--black);
+}
+
+.products .box-container .box span{
+	color: var(--green);
+	font-weight: bolder;
+	margin-right: 1rem;
+	font-size: 1.2rem;
+}
+	
+	section{
+		padding: 2rem 9%;
+	}
+}
+</style>
+<body>
+      <!--header section starts-->
+  <header class="navbar">
+    <a href="#" class="logo"><img src="sg.png" alt="">Suffcient Grace</a>
+    <div class="toggle-button" id="toggleButton">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html"  >Home</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="products.html" class="active">Products</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+  </header>
+  <!--header section ends-->
+  
+   
+    <!--products section starts-->
+  <section class="products" id="products">
+    <h3 class="sub-heading">Products</h3>
+    <div class="box-container">
+      <div class="box">
+        <img src="washing machine.jpg" alt="">
+        <h3>Washing Machine</h3>
+        <span>N35,000</span>
+        <a href="contact.html" class="btn">Buy Now</a>
+      </div>
+      <div class="box">
+        <img src="MICROWAVE.jpg" alt="">
+        <h3>Microwave</h3>
+        <span>N12,000</span>
+		<a href="contact.html" class="btn">Buy Now</a>
+      </div>
+      <div class="box">
+        <img src="diswasher.jpg" alt="">
+        <h3>diswasher</h3>
+        <span>N40,500</span>
+		<a href="contact.html" class="btn">Buy Now</a>
+      </div>
+      <div class="box">
+        <img src="blender-juice-machine.jpg" alt="">
+        <h3>Blender</h3>
+        <span>N15,850</span>
+        <a href="contact.html" class="btn">Buy Now</a>
+      </div>
+      <div class="box">
+        <img src="fan.jpg" alt="">
+        <h3>Fan</h3>
+        <span>N20,000</span>
+		<a href="contact.html" class="btn">Buy Now</a>
+      </div>
+	  <div class="box">
+        <img src="vacuum-cleaner_77211-307.jpg" alt="">
+        <h3>Vacuum-Cleaner</h3>
+        <span>N13,000</span>
+		<a href="contact.html" class="btn">Buy Now</a>
+      </div>
+	  <div class="box">
+        <img src="air-conditioner-mounted-white-wall.jpg" alt="">
+        <h3>Air Conditioner</h3>
+        <span>N45,000</span>
+		<a href="contact.html" class="btn">Buy Now</a>
+      </div>
+	  <div class="box">
+        <img src="fridge.jpg" alt="">
+        <h3>Fridge</h3>
+        <span>N20,000</span>
+        <a href="contact.html" class="btn">Buy Now</a>
+      </div>
+    </div>
+  </section>
+   <!--products section ends-->
+    
+
+
+
+
+
+  <script>
+    const toggleButton = document.getElementById('toggleButton');
+    const navLinks = document.getElementById('navLinks');
+    
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    </script>
+</body>
+</html>

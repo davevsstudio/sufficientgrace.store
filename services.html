@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suffcient Grace - Services</title>
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+    <!--header section starts-->
+  <header class="navbar">
+    <a href="#" class="logo"><img src="sg.png" alt="">Suffcient Grace</a>
+    <div class="toggle-button" id="toggleButton">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" >Home</a></li>
+      <li><a href="categories.html" >Categories</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="products.html" >Products</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+
+  </header>
+ <!--header section ends-->
+ <section class="services" id="services">
+  <h1>Our <span>Services</span></h1>
+  <div class="box-container">
+    <div class="box">
+      <img src="washing machine service.webp" alt="">
+      <h3>Quality Products</h3>
+      <p>Good quality home appliances can make life easier and more comfortable. When it comes to purchasing home appliances, reliability is more important than price or performance. According to Consumer Reports, some of the top-rated brands include GE, LG, Bosch, and Hisense. </p>
+      <a href="#"  class="btn">Shop Now</a>
+    </div>
+      <div class="box">
+      <img src="online-payment-security-concept-3d-phone-bill.jpg" alt="">
+      <h3>Easy Payment</h3>
+      <p> A complicated checkout process can lead to cart abandonment. Keep the checkout process simple by minimizing the number of steps and fields required to complete the transaction </p>
+      <a href="#"  class="btn">Shop Now</a>
+    </div>
+    <div class="box">
+      <img src="delivery.jpg" alt="">
+      <h3>delivery</h3>
+      <p> Ensuring timely delivery is crucial for customer satisfaction. You can set up automated notifications to keep customers informed about the status of their orders. </p>
+      <a href="#"  class="btn">Shop Now</a>
+    </div>
+  </div>
+ </section>
+
+ <script>
+  const toggleButton = document.getElementById('toggleButton');
+  const navLinks = document.getElementById('navLinks');
+  
+  toggleButton.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+  </script>
+</body>
+</html>
